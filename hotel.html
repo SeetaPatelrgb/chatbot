@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        input {
+            background-color: aliceblue;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px rgb(181, 179, 179);
+        }
+       
+    </style>
+</head>
+
+<body class="flex justify-center items-center  P-5">
+    <div class="flex flex-col bg-blue-200 w-1/2 rounded-xl p-7">
+        <h1 class="font-bold text-2xl text-red-500 text-center">Create Hotel</h1>
+        <input type="text" placeholder="hotel name..." id="name">
+        <input type="number" placeholder="Rating..." id="rate">
+        <input type="number" placeholder="room" id="room">
+        <input type="number" placeholder="booking..." id="book">
+        <input type="number" placeholder="Available rooms..." id="avail">
+
+        <div class="text-gray-700 bg-[aliceblue] p-2 rounded-md flex  gap-3 items-center justify-center">
+           <div>
+             <label for="pool">Pool</label>
+            <input type="checkbox" id="pool">
+           </div>
+            <div>
+                <label for="gym">Gym</label>
+            <input type="checkbox" id="gym">
+            </div>
+        </div>
+        <div class="flex justify-center my-5">
+            <button class=" rounded-md bg-red-500 text-white p-2 " id="btn">Create Hotel</button>
+        </div>
+        <div id="out" class="bg-blue-300 p-5 rounded-md">
+          
+        </div>
+    </div>
+    <script >
+let butt=document.getElementById("btn");
+
+function create()
+{
+let name=document.getElementById("name").value;
+let rat=document.getElementById("rate").value;
+let room=document.getElementById("room").value;
+let book=document.getElementById("book").value;
+let avail=document.getElementById("avail").value;
+let pool=document.getElementById("pool");
+let gym=document.getElementById("gym");
+
+let pool_val=pool.checked?"yes":"No";
+let Gym_pool=gym.checked?"yes":"No";
+let output=document.getElementById("out");
+output.innerHTML=`<h1>Hotel created</h1>
+<p>Hotel Name:${name}</p>
+<p>Rating:${name}</p>
+<p>Rooms:${rat}</p>
+<p>Room Book:${room}</p>
+<p>Available room:${book}</p>
+<p>Pool:${pool_val}</p>
+<p>Gym:${Gym_pool}</p>
+`;
+}
+butt.addEventListener("click",create);
+
+// function get(name,rate,room,book,avail,pool,gym)
+// {
+//   this.Name=name;
+//   this.Rate=rate;
+//   this.Room=room;
+//   this.Book=book;
+//   this.Avail=avail;
+//   this.Pool=pool;
+//   this.GYm=gym;  
+// }
+function create()
+{
+let name=document.getElementById("name").value;
+let rat=document.getElementById("rate").value;
+let room=document.getElementById("room").value;
+let book=document.getElementById("book").value;
+let avail=document.getElementById("avail").value;
+let pool=document.getElementById("pool");
+let gym=document.getElementById("gym");
+
+let pool_val=pool.checked?"yes":"No";
+let Gym_pool=gym.checked?"yes":"No";
+let output=document.getElementById("out");
+output.innerHTML=`<h1>Hotel created</h1>
+<p>Hotel Name:${name}</p>
+<p>Rating:${name}</p>
+<p>Rooms:${rat}</p>
+<p>Room Book:${room}</p>
+<p>Available room:${book}</p>
+<p>Pool:${pool_val}</p>
+<p>Gym:${Gym_pool}</p>
+`;
+// let hotel=new get("shree ram",5,8,3,5,"yes","no");
+// output.innerHTML=`<h1>Hotel created</h1>
+// <p>Hotel Name:${hotel.Name}</p>
+// <p>Rating:${hotel.Rate}</p>
+// <p>Rooms:${hotel.Room}</p>
+// <p>Room Book:${hotel.Book}</p>
+// <p>Available room:${hotel.Avail}</p>
+
+// `;
+}
+butt.addEventListener("click",create);
+    </script>
+</body>
+
+</html>
